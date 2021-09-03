@@ -13,4 +13,15 @@ use addressBook_services
  phoneNumber bigint not null,
  emailId varchar(50) not null);
  select * from addressBook_Table;
+
+  /* UC3-Inserting data into the table*/
+  Insert into addressBook_Table (firstName, lastName, address, city, state, zip, phoneNumber, emailId)
+ values
+ ('DJ', 'Arjun', 'Ramtek', 'Mumbai', 'MH', '111111', '1111111110', 'dj@gmail.com'),
+ ('Raj', 'Sharma', 'Vasantkunj', 'Delhi', 'Delhi', '222222',' 2222222220', 'Raj@gmail.com'),
+ ('Shubham', 'Sawant', 'Pahadganj', 'Kanpur', 'UP', '333333', '3333333330', 'shubham@gmail.com'),
+ ('Raj', 'Kumar', 'Ramnagar', 'Hisar', 'Haryana', '444444', '4444444440', 'rajk@gmail.com');
+
+ select * from addressBook_Table
+
  
