@@ -24,4 +24,9 @@ use addressBook_services
 
  select * from addressBook_Table
 
+ /*UC4- Updating the row contact detail from the address book table finding by the contact name  */
+
+  Update addressBook_Table set address ='Yashwardhan' 
+ where firstName = 'DJ' and lastName = 'Arjun';
  
+ select * from addressBook_Table
