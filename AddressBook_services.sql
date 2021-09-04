@@ -47,3 +47,17 @@ use addressBook_services
  select state,count (*) as 'Number of Contacts'
   from addressBook_Table 
   group by state
+
+   /* UC8- Sorting alphabetically in ascending order by the name and belonging to a city say Mumbai*/
+   select * from addressBook_Table
+  /*insert more data*/
+  Insert into addressBook_Table (firstName, lastName, address, city, state, zip, phoneNumber, emailId)
+ values
+ ('RJ', 'Arun', 'Worli', 'Mumbai', 'MH', '100111', '1111111100', 'rj@gmail.com'),
+ ('Raj', 'shamani', 'Bandra', 'Mumbai', 'MH', '111110',' 2222222200', 'rs@gmail.com'),
+ ('Vivek', 'Agrawal', 'Ghatkopar', 'Mumbai', 'MH', '111100', '3333333300', 'vivek@gmail.com'),
+ ('Vinit', 'Kumar', 'Varsoa', 'Mumbai', 'MH', '111000', '4444444400', 'vinit@gmail.com');
+  select * from addressBook_Table
+ where city = 'Mumbai'
+ order by firstName
+
