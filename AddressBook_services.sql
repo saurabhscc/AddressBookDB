@@ -33,3 +33,8 @@ use addressBook_services
 
  select * from addressBook_Table
  delete from addressBook_Table where firstName ='Raj' and lastName = 'Kumar'
+
+ /* UC6- Display the contact from the address book table matching the city OR state*/
+
+ select * from addressBook_Table
+  where state = 'UP' or city = 'Mumbai';
