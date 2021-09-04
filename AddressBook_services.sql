@@ -38,3 +38,12 @@ use addressBook_services
 
  select * from addressBook_Table
   where state = 'UP' or city = 'Mumbai';
+
+   /* UC7- Display the count of contacts by city and state*/
+
+ select city,count (*) as 'Number of Contacts'
+ from addressBook_Table 
+ group by city
+ select state,count (*) as 'Number of Contacts'
+  from addressBook_Table 
+  group by state
