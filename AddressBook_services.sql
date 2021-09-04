@@ -29,4 +29,7 @@ use addressBook_services
   Update addressBook_Table set address ='Yashwardhan' 
  where firstName = 'DJ' and lastName = 'Arjun';
  
+   /* UC5- Delete the row entry from the address book table where name matches */
+
  select * from addressBook_Table
+ delete from addressBook_Table where firstName ='Raj' and lastName = 'Kumar'
