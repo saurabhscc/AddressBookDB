@@ -90,7 +90,38 @@ if we do not use Normalcy or Entity-Relationship Concept leading to data redunda
 select * from addressBook_Table
 insert into addressBook_Table (firstName, lastName, address, city, state, phoneNumber, zip, emailId, contactType, addressBookName)
 values
-('RJ', 'Arun', 'Worli', 'Mumbai', 'MH', '100111', '1111111100', 'rj@gmail.com', 'Family', 'SaurabhRecords');
+('RJ', 'Arun', 'Worli', 'Mumbai', 'MH','1111111100', '100111',  'rj@gmail.com', 'Family', 'SaurabhRecords');
 /* Displaying the data redundancy through a query */
  select * from addressBook_Table
  where firstName ='RJ' and lastName = 'Arun';
+
+ use addressBook_services
+ /* Create Mentor table with primary id */
+CREATE TABLE contacts(
+Id int identity(1,1) primary key,
+firstName varchar(50) not null,
+lastName varchar(50) not null,
+zip bigint not null,
+phoneNumber bigint not null,
+emailId varchar(50) not null,        
+)
+/* Create addressDetail table with foreign id */
+CREATE TABLE addressDetail(
+Id int identity(1,1) primary key,
+address varchar(50) not null,
+city varchar(50) not null,
+state varchar(50) not null,
+contactsId int FOREIGN KEY REFERENCES contacts(Id)
+)
+/* Create addressBook table with foreign id */
+ CREATE TABLE addressBook(
+ Id int identity(1,1) primary key, 
+ addressBookName varchar(40),
+ contactsId int FOREIGN KEY REFERENCES contacts(Id)
+ )
+/* Create contactType table with foreign id */
+CREATE TABLE contactType(
+ Id int identity(1,1) primary key, 
+ contactType varchar(30),
+ contactsId int FOREIGN KEY REFERENCES contacts(Id)
+ )                                
