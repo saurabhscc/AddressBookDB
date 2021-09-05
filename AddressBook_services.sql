@@ -82,3 +82,15 @@ use addressBook_services
  /* Getting the contact count grouping by the contact type */
  select contactType, COUNT(*) as 'Number Of Contacts'
 from addressBook_Table group by contactType;
+
+/*UC11-Add Contact Name For MUltiple Contact Type */
+/* Adding a contact to multiple contact Type require duplication of contact
+if we do not use Normalcy or Entity-Relationship Concept leading to data redundancy */
+
+select * from addressBook_Table
+insert into addressBook_Table (firstName, lastName, address, city, state, phoneNumber, zip, emailId, contactType, addressBookName)
+values
+('RJ', 'Arun', 'Worli', 'Mumbai', 'MH', '100111', '1111111100', 'rj@gmail.com', 'Family', 'SaurabhRecords');
+/* Displaying the data redundancy through a query */
+ select * from addressBook_Table
+ where firstName ='RJ' and lastName = 'Arun';
