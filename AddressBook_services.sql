@@ -61,3 +61,18 @@ use addressBook_services
  where city = 'Mumbai'
  order by firstName
 
+  /*UC9- Adding the columns for address book name and type of address book in addressbook table */
+  select * from addressBook_Table
+
+ alter table addressBook_Table
+ add addressBookType varchar(30), addressBookName varchar(40);
+ /* Update the address book to add records in the recent added fields*/
+ update addressBook_Table set addressBookType = 'Friends' where city ='Mumbai';
+  /* Update the address book to add records in the recent added fields*/
+ update addressBook_Table set addressBookName = 'SaurabhRecords';
+ /* Update the address book to add records in the recent added fields*/
+ update addressBook_Table set addressBookType = 'Family' where lastName ='Sawant';
+ /* Update the address book to add records in the recent added fields*/
+ update addressBook_Table set addressBookType = 'Profession' where addressBookType is null
+
+ 
